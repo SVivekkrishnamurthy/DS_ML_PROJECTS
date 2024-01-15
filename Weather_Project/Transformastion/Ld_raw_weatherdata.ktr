@@ -500,23 +500,28 @@
   </connection>
   <order>
     <hop>
-      <from>CSV file input</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>Filter rows</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
       <to>Table output</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
       <to>Dummy (do nothing)</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>CSV file input</from>
+      <to>Filter rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 2</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -531,7 +536,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>D:\DS_ML\DS_ML_PROJECTS\Weather_Project\Input\NI_list_v04r00.csv</filename>
+    <filename>D:\DS_ML\DS_ML_PROJECTS\Weather_Project\Input\SI_list_v04r00.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -608,7 +613,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>9</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -641,8 +646,8 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>7</length>
-        <precision>4</precision>
+        <length>8</length>
+        <precision>5</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -664,7 +669,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -675,19 +680,19 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
         <name>WMO_AGENCY</name>
         <type>String</type>
-        <format>#.#</format>
+        <format/>
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>2</precision>
-        <trim_type>both</trim_type>
+        <length>7</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>TRACK_TYPE</name>
@@ -696,9 +701,9 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
+        <length>10</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>DIST2LAND</name>
@@ -708,8 +713,8 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
-        <trim_type>both</trim_type>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>LANDFALL</name>
@@ -719,7 +724,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -731,7 +736,7 @@
         <group>,</group>
         <length>14</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>USA_AGENCY</name>
@@ -1258,7 +1263,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1269,12 +1274,12 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
         <name>NEWDELHI_GRADE</name>
-        <type>String</type>
+        <type>Number</type>
         <format>#.#</format>
         <currency>$</currency>
         <decimal>.</decimal>
@@ -1291,7 +1296,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1302,7 +1307,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1313,7 +1318,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1324,7 +1329,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1335,7 +1340,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1345,8 +1350,8 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <length>8</length>
+        <precision>5</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1356,8 +1361,8 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <length>7</length>
+        <precision>4</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1400,8 +1405,8 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <length>3</length>
+        <precision>1</precision>
         <trim_type>both</trim_type>
       </field>
       <field>
@@ -1994,9 +1999,9 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>7</length>
-        <precision>4</precision>
-        <trim_type>none</trim_type>
+        <length>8</length>
+        <precision>5</precision>
+        <trim_type>both</trim_type>
       </field>
       <field>
         <name>TD9636_LON</name>
@@ -2007,18 +2012,18 @@
         <group>,</group>
         <length>7</length>
         <precision>4</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
         <name>TD9636_STAGE</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
         <precision>0</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
         <name>TD9636_WIND</name>
@@ -2325,7 +2330,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2336,7 +2341,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>2</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
@@ -2349,7 +2354,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
+      <xloc>80</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3361,6 +3366,23 @@
       <remove>
         <name>USA_SEARAD_NW</name>
       </remove>
+      <meta>
+        <name>ISO_TIME</name>
+        <rename>ISO_TIME</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH:mm:ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -3391,7 +3413,7 @@
     <schema>weather_analysis</schema>
     <table>Stg_weather_data</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -3632,18 +3654,39 @@
     <compare>
       <condition>
         <negated>N</negated>
-        <leftvalue>SEASON</leftvalue>
-        <function>&gt;=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>Integer</type>
-          <text>2015</text>
-          <length>-1</length>
-          <precision>0</precision>
-          <isnull>N</isnull>
-          <mask>####0;-####0</mask>
-        </value>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>SEASON</leftvalue>
+            <function>&gt;=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>2015</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>ISO_TIME</leftvalue>
+            <function>&gt;=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Date</type>
+              <text>2015/01/01 00:00:00.000</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask>yyyy-MM-dd HH:mm:ss</mask>
+            </value>
+          </condition>
+        </conditions>
       </condition>
     </compare>
     <attributes/>
@@ -3682,6 +3725,62 @@
     <GUI>
       <xloc>384</xloc>
       <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Filter rows 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Select values</send_true_to>
+    <send_false_to/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>SEASON</leftvalue>
+            <function>&gt;=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>2015</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>ISO_TIME</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
