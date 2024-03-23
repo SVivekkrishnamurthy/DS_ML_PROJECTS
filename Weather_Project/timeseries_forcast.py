@@ -39,12 +39,30 @@ with col2:
 df = df[(df["ISO_TIME"] >= date1) & (df["ISO_TIME"] <= date2)].copy()
 
 st.sidebar.header("Choose filter")
-basin = st.sidebar.multiselect("Pick BASIN",df["BASIN"].unique())
+basin = st.sidebar.multiselect("BASIN",df['BASIN'].unique())
 
 if not basin:
     df2 = df.copy()
 else:
     df2 = df[df["BASIN"].isin(basin)]
 
+subbasin = st.sidebar.multiselect("SUBBASIN",df2["SUBBASIN"].unique())
+
+if not basin:
+    df3 = df2.copy()
+else:
+    df3 = df2[df2["SUBBASIN"].isin(subbasin)]
+
+names = st.sidebar.multiselect("NAME",df3["NAME"].unique())
+
+
+if not basin and not subbasin and not names:
+    filtered_df =df
+elif not subbasin and not names:
+    filtered_df = df[df["BASIN"].isin(basin)]
+elif not basin and not names:
+    filtered_df = df[df["SUBBASIN"].isin(subbasin)]
+elif subbasin and names:
+    filtered_df = df3[df["SUBBASIN"].isin(subbasin) & df
 
 
