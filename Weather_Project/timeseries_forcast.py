@@ -21,7 +21,7 @@ if f1 is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding='ISO-8859-1')
 else:
-    os.chdir(r"C:\Users\vsubramanian\Desktop\Python\Python Restart\DataScience\Create_App\input")
+    os.chdir(r"CD:\DS_ML\DS_ML_PROJECTS\Weather_Project\Input")
     df = pd.read_csv("weather.csv", encoding='ISO-8859-1')
 
 col1, col2 = st.columns((2))
