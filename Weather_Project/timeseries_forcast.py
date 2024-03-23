@@ -63,12 +63,15 @@ elif not subbasin and not names:
 elif not basin and not names:
     filtered_df = df[df["SUBBASIN"].isin(subbasin)]
 elif subbasin and names:
-    filtered_df = df3[df["SUBBASIN"].isin(subbasin) & df3["NAMES"].isin(names)]
+    filtered_df = df3[df["SUBBASIN"].isin(subbasin) & df3["NAME"].isin(names)]
 elif basin and names:
-    filtered_df = df3[df["SUBBASIN"].isin(basin) & df3["NAMES"].isin(names)]
+    filtered_df = df3[df["SUBBASIN"].isin(basin) & df3["NAME"].isin(names)]
 elif basin and subbasin:
-    filtered_df = df3[df["SUBBASIN"].isin(basin) & df3["NAMES"].isin(subbasin)]
+    filtered_df = df3[df["SUBBASIN"].isin(basin) & df3["NAME"].isin(subbasin)]
 elif names:
-    filtered_df = df3[df3["NAMES"].isin(names)]
+    filtered_df = df3[df3["NAME"].isin(names)]
 else:
-    filtered_df = df3[df3["BASIN"].isin(basin) & df3["SUBBASIN"].isin(subbasin) & df3["NAMES"].isin(names)]
+    filtered_df = df3[df3["BASIN"].isin(basin) & df3["SUBBASIN"].isin(subbasin) & df3["NAME"].isin(names)]
+
+
+category_df = filtered_df.groupby()
